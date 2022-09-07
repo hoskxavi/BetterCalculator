@@ -4,6 +4,8 @@
 'Better Calculator
 'https://github.com/hoskxavi/BetterCalculator
 
+Option Explicit On
+Option Strict On
 Imports System
 
 Module Program
@@ -103,7 +105,7 @@ Module Program
                     Case "4"
                         Console.Write("You entered: ")
                         Console.WriteLine(userInput)
-                        result = firstNumber / secondNumber
+                        result = CDec(firstNumber / secondNumber)
                         Console.Write(firstNumber)
                         Console.Write("/")
                         Console.Write(secondNumber)

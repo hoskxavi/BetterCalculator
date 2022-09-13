@@ -8,7 +8,7 @@ Option Explicit On
 Option Strict On
 Imports System
 
-Module Program
+Module Calculate
     Sub Main()
 
         Dim firstNumber As Integer
@@ -17,9 +17,10 @@ Module Program
         Dim result As Decimal
         Dim retry As Boolean = True
 
-        Do
+        Do 'Continuous loop 
             Console.WriteLine("Please enter two numbers. Enter Q at any time to quit.")
 
+            'Block for entering and validating the first number
             Do While retry = True
                 Console.Write("Enter a number:")
                 userInput = Console.ReadLine()
@@ -41,6 +42,7 @@ Module Program
                 End Try
             Loop
 
+            'Block for entering and validating the second number
             Do While retry = False
                 Console.Write("Enter a number:")
                 userInput = Console.ReadLine()
@@ -63,6 +65,7 @@ Module Program
                 End Try
             Loop
 
+            'Loop for selecting math operation
             Do While retry = True
                 Console.WriteLine("Choose one of the following options:")
                 Console.WriteLine("1. Add")
@@ -71,7 +74,7 @@ Module Program
                 Console.WriteLine("4. Divide")
                 userInput = Console.ReadLine()
 
-                Select Case userInput
+                Select Case userInput 'Case select controls the math operation
                     Case "1"
                         Console.Write("You entered: ")
                         Console.WriteLine(userInput)
@@ -119,7 +122,7 @@ Module Program
                             Console.WriteLine("Have a nice day.")
                             Exit Sub
                         End If
-                        Console.Write("You entered: ")
+                        Console.Write("You entered: ") 'Restarts the loop if an invalid choice is entered
                         Console.Write(userInput)
                 End Select
             Loop
